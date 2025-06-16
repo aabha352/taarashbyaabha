@@ -717,12 +717,18 @@
             const orderSummary = cart.map(item => 
                 `${item.name} (Qty: ${item.quantity}) - ₹${(item.price * item.quantity).toLocaleString()}`
             ).join('\n');
-            
-            const message = `🛍️ New Order from तारश by Aabha!\n\n📋 Order Details:\n${orderSummary}\n\n💰 Total Amount: ₹${cartTotal.toLocaleString()}\n\n📞 Please contact us at 8607972352 to confirm your order!`;
-            
-            // Create WhatsApp link
-            const whatsappUrl = `https://wa.me/918607972352?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
+            const message = `Thank you for placing an order with तारश by Aabha.
+
+Order Summary:
+${orderSummary}
+
+Total Amount: ₹${cartTotal.toLocaleString()}
+
+To proceed further, please get in touch with us at 8607972352 to confirm your order. We truly appreciate your interest and look forward to assisting you.`;
+
+const whatsappUrl = `https://wa.me/918607972352?text=${encodeURIComponent(message)}`;
+window.open(whatsappUrl, '_blank');
+
             
             // Clear cart after order
             cart = [];
